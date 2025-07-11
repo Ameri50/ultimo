@@ -1,12 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  // Removed unused state
   const pathname = usePathname()
 
   const linkClass = (path: string) =>
@@ -25,7 +24,7 @@ export default function Header() {
             <div className="mb-10 flex items-center justify-center">
               <Image
                 src="/images/zgas-logo.png"
-                alt="Zeta Gas Logo"
+                alt="Logo Tecnología"
                 width={160}
                 height={60}
                 className="object-contain"
@@ -36,35 +35,42 @@ export default function Header() {
               <nav className="flex flex-col space-y-2">
                 <Link href="/" className={linkClass('/')}>
                   <span className="flex items-center">
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2 7-7 7 7 2 2v10a1 1 0 01-1 1H4a1 1 0 01-1-1V12z" />
                     </svg>
                     Inicio
                   </span>
                 </Link>
-                <Link href="/Productos" className={linkClass('/Productos')}>
+                <Link href="/Servicios" className={linkClass('/Servicios')}>
                   <span className="flex items-center">
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 3v1.5m0 15V21m4.5-18v1.5m0 15V21m3.75-9H6" />
                     </svg>
-                    Productos
+                    Servicios
                   </span>
                 </Link>
-                <Link href="/SobreNosotros" className={linkClass('/SobreNosotros')}>
+                <Link href="/Proyectos" className={linkClass('/Proyectos')}>
                   <span className="flex items-center">
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h6m-3 8h4a2 2 0 002-2v-5H9v5a2 2 0 002 2z" />
                     </svg>
-                    Sobre Nosotros
+                    Proyectos
                   </span>
                 </Link>
-                <Link href="/Ubicanos" className={linkClass('/Ubicanos')}>
+                <Link href="/Equipo" className={linkClass('/Equipo')}>
                   <span className="flex items-center">
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1M12 12a4 4 0 100-8 4 4 0 000 8z" />
                     </svg>
-                    Ubícanos
+                    Equipo
+                  </span>
+                </Link>
+                <Link href="/Contacto" className={linkClass('/Contacto')}>
+                  <span className="flex items-center">
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5h18M3 10h18M3 15h18" />
+                    </svg>
+                    Contacto
                   </span>
                 </Link>
               </nav>
@@ -74,7 +80,7 @@ export default function Header() {
           {/* Footer del sidebar */}
           <div className="pb-6 px-2">
             <div className="p-3 bg-blue-50 rounded-lg text-center text-blue-700 text-sm">
-              <p>Z gas Valle Jequetepeque</p>
+              <p>NovaTech Solutions</p>
               <p className="text-xs text-gray-500 mt-1">© {new Date().getFullYear()}</p>
             </div>
           </div>
